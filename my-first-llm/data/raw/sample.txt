@@ -1,0 +1,120 @@
+# Sample Training Data
+
+This is sample training data for your LLM project. Replace this with your own data to train a custom language model.
+
+## Getting Started
+
+To use your own data, simply replace this file with your training text. You can add multiple text files to the data/raw/ directory, and the preparation script will process all of them.
+
+## Data Requirements for NANO Template
+
+The NANO template is designed for quick experimentation and learning:
+- Recommended data size: 1-10MB of text
+- Model size: 1M parameters  
+- Hardware: None (CPU-friendly)
+- Training time: 1-2 minutes
+
+## Data Quality Guidelines
+
+For best training results, follow these guidelines:
+- Use clean, well-formatted text without excessive special characters
+- Remove unwanted formatting, HTML tags, or markup
+- Ensure data represents your target domain or use case
+- Include diverse examples for general-purpose models
+- Maintain consistent formatting and style throughout
+
+## Example Training Domains
+
+You can train models on various types of text data:
+
+### Code Generation
+Train on programming code to create a code completion model. Include comments, function definitions, and complete programs in languages like Python, JavaScript, Java, or C++.
+
+### Literature and Creative Writing  
+Use books, articles, short stories, or poetry to train a creative writing assistant. Include diverse writing styles and genres for better generalization.
+
+### Technical Documentation
+Train on technical manuals, API documentation, tutorials, or how-to guides to create a technical writing assistant.
+
+### Conversational AI
+Use dialogue data, chat logs, or conversational transcripts to train a chatbot or conversational agent.
+
+### Domain-Specific Applications
+Train on specialized text like medical records, legal documents, scientific papers, or business reports for domain-specific applications.
+
+## Data Format and Structure
+
+Your training data should be plain text files with UTF-8 encoding. Here's a recommended directory structure:
+
+```
+data/raw/
+├── train.txt          # Main training data
+├── val.txt            # Validation data (optional)
+├── domain1.txt        # Additional domain-specific data
+├── domain2.txt        # More domain data
+└── sample.txt         # This file (replace with your data)
+```
+
+If you don't provide a separate validation file, the data preparation script will automatically create a validation split from your training data.
+
+## Example Training Data
+
+Here's some example text to demonstrate the format. This is just placeholder content - replace it with your actual training data.
+
+Once upon a time, in a land far away, there lived a curious programmer who wanted to train their own language model. They gathered text data from various sources and prepared it carefully.
+
+The programmer learned that data quality matters more than quantity. Clean, well-formatted text produces better models than large amounts of noisy data.
+
+They discovered that even small models can be surprisingly capable when trained on focused, domain-specific data. The key is matching the model size to the task complexity.
+
+After preparing the data, the programmer ran the tokenizer training script to create a vocabulary. Then they started the training process and watched as the loss decreased with each epoch.
+
+The model learned patterns in the text, understanding grammar, style, and domain-specific terminology. With patience and careful tuning, the programmer created a useful language model.
+
+## Data Preparation Steps
+
+Follow these steps to prepare your data for training:
+
+1. Replace this file with your training data (or add new .txt files to data/raw/)
+2. Train the tokenizer: `python tokenizer/train.py --data data/raw/`
+3. Prepare the dataset: `python data/prepare.py`
+4. Start training: `python training/train.py`
+
+## Tips for Better Results
+
+- Start with at least 1MB of text for meaningful results
+- Use consistent formatting throughout your dataset
+- Remove duplicate or near-duplicate content
+- Balance different types of content if training for general use
+- Test with small experiments before scaling up
+- Monitor training loss to ensure the model is learning
+
+## Advanced Data Techniques
+
+For more advanced users, consider these techniques:
+
+### Data Augmentation
+Create variations of your text through paraphrasing, back-translation, or synthetic generation to increase dataset size.
+
+### Data Filtering
+Remove low-quality examples, duplicates, or irrelevant content to improve training efficiency.
+
+### Domain Mixing
+Combine data from multiple domains to create more versatile models, but maintain balance between domains.
+
+### Curriculum Learning
+Start training on simpler examples and gradually introduce more complex ones for better learning.
+
+## Next Steps
+
+Once you've replaced this sample data with your own:
+
+1. Train the tokenizer on your data
+2. Prepare the processed dataset  
+3. Adjust training hyperparameters in llm.config.js if needed
+4. Start training and monitor the loss
+5. Evaluate your model and iterate
+
+For more detailed information, see the README.md file in the project root.
+
+Good luck with your language model training!
